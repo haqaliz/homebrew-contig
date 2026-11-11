@@ -7,10 +7,8 @@
 # A real pipeline run still needs Nextflow, a Java runtime, and a container runtime;
 # the self-contained commands work without them.
 class Contig < Formula
-  desc "Agentic bioinformatics analyst: the Layer-2 run, self-heal, verify, reproduce engine"
+  desc "Agentic bioinformatics analyst: run, self-heal, verify, reproduce engine"
   homepage "https://github.com/haqaliz/contig"
-  version "1.2.0"
-
   on_macos do
     on_arm do
       url "https://github.com/haqaliz/contig/releases/download/v1.2.0/contig-macos-arm64"
@@ -23,8 +21,10 @@ class Contig < Formula
   end
 
   on_linux do
-    url "https://github.com/haqaliz/contig/releases/download/v1.2.0/contig-linux-x86_64"
-    sha256 "f404583ea0ab830cbe543374ef0228a273c9014af5fda22cc65fda730332eac2"
+    on_intel do
+      url "https://github.com/haqaliz/contig/releases/download/v1.2.0/contig-linux-x86_64"
+      sha256 "f404583ea0ab830cbe543374ef0228a273c9014af5fda22cc65fda730332eac2"
+    end
   end
 
   def install
